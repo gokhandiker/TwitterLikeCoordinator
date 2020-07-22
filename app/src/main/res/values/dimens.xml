@@ -5,4 +5,5 @@
     <dimen name="profile_image_width">100dp</dimen>
     <dimen name="profile_image_height">100dp</dimen>
     <dimen name="profile_image_translation">8dp</dimen>
+    <dimen name="image_small_width">0dp</dimen>
 </resources>

@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
+
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -19,23 +20,31 @@
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:contentScrim="#46a8ba"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
 
             <ImageView
                 android:id="@+id/profile.appbar.collapsing.image"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="160dp"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/back" />
+
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/profile.appbar.toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -44,12 +53,14 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="@dimen/profile_image_width"
         android:layout_height="@dimen/profile_image_height"
+        android:layout_marginLeft="@dimen/profile_image_margin_left"
         android:src="@drawable/profile"
+        android:translationY="@dimen/profile_image_translation"
         app:civ_border_color="@color/white"
         app:civ_border_width="@dimen/profile_image_border_width"
-        android:layout_marginLeft="@dimen/profile_image_margin_left"
-        android:translationY="@dimen/profile_image_translation"
-        app:layout_behavior=".profile.ProfileImageBehavior"
-        app:layout_anchor="@id/profile.appbar.collapsing"
-        app:layout_anchorGravity="bottom|left" />
+        app:layout_anchor="@id/profile.appbar"
+        app:layout_anchorGravity="bottom|left"
+        app:layout_behavior=".profile.ProfileImageBehavior" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
