@@ -49,7 +49,6 @@ public class ProfileImageBehavior extends CoordinatorLayout.Behavior<CircleImage
         float expandedPercentageFactor = dependency.getY() / maxScrollDistance;
 
 
-        Log.e("parenty",""+parent.get);
 
         CoordinatorLayout.LayoutParams lp = (CoordinatorLayout.LayoutParams) child.getLayoutParams();
         lp.width = (int) (startHeight - startHeight*expandedPercentageFactor/10);
